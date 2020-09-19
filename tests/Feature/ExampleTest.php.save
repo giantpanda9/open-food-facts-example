@@ -1,0 +1,38 @@
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+use App\openFoodFacts;
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+	public function testBasicTest() {
+		$response = $this->get('/');
+		$response->assertStatus(200);
+	}
+	 function testAPIResponseTest() {
+		$openFoodFacts = new openFoodFacts;
+		$testURL = $openFoodFacts->getURL(1, "");
+		print_r($testURL);
+		$response = $this->get($testURL);
+		$response->assertOk();
+	}
+	public function testContentTest() {
+		$openFoodFacts = new openFoodFacts;
+		$response = $openFoodFacts->getResponse(1,"");
+		$response->assertCount(17,$response,"Standard first page response count is nto 17. Check API response.");
+	}
+        public function testExistsTest1() {
+		$openFoodFacts = new openFoodFacts;
+		$randomPage = rand(1,1000);
+		$randomItem = rand(0,17);
+                $response = $openFoodFacts->getResponse($randomPage,"");
+                $response-> $response->assertArrayHasKey('ID', $response[$randomItem], "Page #" . $randomPage . " item #" . $randomItem . " no ID field");
+        }
+}

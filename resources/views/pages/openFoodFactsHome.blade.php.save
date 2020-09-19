@@ -1,0 +1,45 @@
+@extends('layouts.default')
+@section('content')
+	<body class="custom-body">
+		<div class="custom-header-container">
+			<header class="custom-wrapper">
+				<h1>Open Food Facts</h1>
+				<nav>
+					<ul>
+						<li><form action='/searchProduct' method="POST">
+							{{ csrf_field() }}
+							<label for="productName">Search By Name:</label>
+							<input type="text" id="productName" name="productName" 
+								value='{{ $foodFacts["currentProductName"] }}'>
+							<input type="hidden" name="action" id="action" value="searchProduct">
+							<input type="submit" value="Search">
+						</li>
+						<li>
+						<a class="button-link" href='/openFoodFacts/{{ $foodFacts["prevPage"] }}'><</a>
+						{{ csrf_field() }}
+						<input type="hidden" name="action" id="action" value="pagination">
+						<input type="text" class="paginator" id="pageNo" name="pageNo" width="10px" value='{{ $foodFacts["currentPage"] }}'>
+						<span>of {{ $foodFacts["lastPage"] }}</span>
+						<input type="submit" value="Jump To">
+						
+						<a class="button-link" href='/openFoodFacts/{{ $foodFacts["nextPage"] }}'>></a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+		<div class="main-container">
+				@foreach($foodFacts["products"] as $item)
+					<div class="main-data-block">
+						<div>ID: {{ $item["ID"] }}</div>
+						<div class="image-container">
+							Image:<br/>
+							<a href='{{ $item["Image"] }}' target='blank_'>
+								<img src='{{ $item["Image"] }}'/>
+							</a>
+						</div>
+						<div>Name: {{ $item["Name"] }}</div>
+						<div>Category: {{ $item["Category"] }}</div>
+					</div>
+				@endforeach
+@endsection
