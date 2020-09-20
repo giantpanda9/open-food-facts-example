@@ -1,6 +1,6 @@
 # open-food-facts-example
 PHP Laravel Curl API Request with CSS Flex Front-end
-1. Video footage: https://youtu.be/3i52ROduyes
+1. Video footage: https://youtu.be/SSWjTl6H-GY
 2. Small screenshot: https://github.com/giantpanda9/open-food-facts-example/blob/master/PreviewVideoScreenshots/OpenFoodFactsSocialScreenshot.png
 3. Large screenshot: https://github.com/giantpanda9/open-food-facts-example/blob/master/PreviewVideoScreenshots/OpenFoodFactsSocialScreenshotBig.png
 # Description
