@@ -60,3 +60,4 @@ D. php -r "unlink('composer-setup.php');"
 # How to run?
 1. on your Host OS, in browser, please populate address line as follows:
 2. http://127.0.0.1:8080/openFoodFacts
+3. sudo php artisan test
