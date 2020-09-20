@@ -1,5 +1,8 @@
 # open-food-facts-example
 PHP Laravel Curl API Request with CSS Flex Front-end
+Video footage: https://youtu.be/3i52ROduyes
+Small screenshot: https://github.com/giantpanda9/open-food-facts-example/blob/master/PreviewVideoScreenshots/OpenFoodFactsSocialScreenshot.png
+Big screenshot: https://github.com/giantpanda9/open-food-facts-example/blob/master/PreviewVideoScreenshots/OpenFoodFactsSocialScreenshotBig.png
 # Description
 This project is implemented using Laravel as basis so the file must be copied into corresponding directory created as a Laravel project with the file contents update
 # Notes
